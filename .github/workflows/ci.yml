@@ -84,7 +84,7 @@ jobs:
     - name: Dry-run build for x86_64
       run: |
         echo "Performing dry-run build..."
-        make ARCH=x86_64 -n || echo "Build system ready"
+        make ARCH=x86 -n || echo "Build system ready"
     
     - name: Test build preparation
       run: |
@@ -130,8 +130,12 @@ jobs:
       run: |
         echo "Checking for hardcoded secrets..."
         # Basic pattern matching for common secret patterns
-        ! grep -r -E "(password|passwd|pwd|secret|api_key|apikey|token).*=.*['\"][^'\"]{8,}" . \
-          --include="*.c" --include="*.h" || echo "No hardcoded secrets detected"
+        if grep -r -E "(password|passwd|pwd|secret|api_key|apikey|token).*=.*['\"][^'\"]{8,}" . \
+           --include="*.c" --include="*.h" 2>/dev/null; then
+          echo "ERROR: Potential hardcoded secrets detected!"
+          exit 1
+        fi
+        echo "✓ No hardcoded secrets detected"
 
   documentation:
     name: Documentation Check

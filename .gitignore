@@ -127,7 +127,6 @@ scripts/asn1_compiler
 #
 *.gcda
 *.gcov
-*.gcno
 coverage/
 
 #
