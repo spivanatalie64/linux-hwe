@@ -65,11 +65,6 @@ arch/*/include/generated/
 .config.old
 .version
 .old_version
-*.orig
-*~
-\#*#
-*.swp
-*.swo
 
 #
 # Build directories
@@ -103,7 +98,6 @@ scripts/asn1_compiler
 #
 # Git files
 #
-*.orig
 *.rej
 
 #
@@ -115,6 +109,8 @@ scripts/asn1_compiler
 *.bak
 *.BAK
 *.tmp
+*.orig
+\#*#
 
 #
 # IDE files
@@ -150,7 +146,3 @@ Documentation/DocBook/*.tex
 #
 cscope.*
 ncscope.*
-*.swp
-Module.markers
-modules.order
-modules.builtin

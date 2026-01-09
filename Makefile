@@ -86,12 +86,11 @@ all: vmlinux
 # Core kernel directories
 core-y		:= init/ kernel/ mm/ fs/ ipc/ net/
 drivers-y	:= drivers/
-libs-y		:= lib/
 
 # Build targets
-vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, $(core-y) $(drivers-y) $(libs-y)))
+vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, $(core-y) $(drivers-y)))
 
-export core-y drivers-y libs-y vmlinux-dirs
+export core-y drivers-y vmlinux-dirs
 
 # Placeholder targets for minimal build system
 vmlinux: prepare
