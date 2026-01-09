@@ -1,0 +1,156 @@
+# SPDX-License-Identifier: GPL-2.0
+#
+# .gitignore for AcreetionOS Linux Kernel
+# Copyright (c) ArttulOS Project
+
+#
+# Build artifacts
+#
+*.o
+*.o.*
+*.a
+*.s
+*.ko
+*.so
+*.so.dbg
+*.mod.c
+*.mod
+*.i
+*.lst
+*.symtypes
+*.order
+*.elf
+*.bin
+*.gz
+*.bz2
+*.lzma
+*.xz
+*.lz4
+*.lzo
+*.patch
+*.gcno
+*.ll
+*.su
+*.cmd
+*.d
+
+#
+# Top-level generic files
+#
+/tags
+/TAGS
+/linux
+/vmlinux
+/vmlinux.32
+/vmlinux-gdb.py
+/vmlinuz
+/System.map
+/Module.markers
+/Module.symvers
+/modules.builtin
+/modules.order
+
+#
+# Generated include files
+#
+include/config/
+include/generated/
+include/asm
+arch/*/include/generated/
+
+#
+# Kernel configuration
+#
+.config
+.config.old
+.version
+.old_version
+*.orig
+*~
+\#*#
+*.swp
+*.swo
+
+#
+# Build directories
+#
+scripts/basic/fixdep
+scripts/basic/bin2c
+scripts/kconfig/conf
+scripts/kconfig/mconf
+scripts/kconfig/nconf
+scripts/kconfig/qconf
+scripts/kconfig/gconf
+scripts/mod/
+scripts/selinux/
+scripts/kallsyms
+scripts/pnmtologo
+scripts/conmakehash
+scripts/recordmcount
+scripts/sortextable
+scripts/asn1_compiler
+
+#
+# Debian package files
+#
+/debian/
+
+#
+# Snap package files
+#
+*.snap
+
+#
+# Git files
+#
+*.orig
+*.rej
+
+#
+# Editor backup files
+#
+*~
+*.swp
+*.swo
+*.bak
+*.BAK
+*.tmp
+
+#
+# IDE files
+#
+.vscode/
+.idea/
+*.iml
+.project
+.cproject
+.settings/
+
+#
+# Testing
+#
+*.gcda
+*.gcov
+*.gcno
+coverage/
+
+#
+# Documentation build artifacts
+#
+Documentation/output/
+Documentation/DocBook/*.aux
+Documentation/DocBook/*.dvi
+Documentation/DocBook/*.log
+Documentation/DocBook/*.pdf
+Documentation/DocBook/*.ps
+Documentation/DocBook/*.tex
+
+#
+# Other
+#
+cscope.*
+ncscope.*
+*.swp
+Module.markers
+modules.order
+modules.builtin
