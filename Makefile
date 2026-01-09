@@ -30,8 +30,9 @@ build:
 	@echo "Building AcreetionOS Linux HWE..."
 	@mkdir -p $(BUILD_DIR)
 	@echo "Build directory created at $(BUILD_DIR)"
-	@if [ -n "$$(find $(SRC_DIR) -name '*.c' 2>/dev/null)" ]; then \
-		$(CC) $(CFLAGS) $(SRC_DIR)/*.c -o $(BUILD_DIR)/linux-hwe $(LDFLAGS); \
+	@SRC_FILES=$$(find $(SRC_DIR) -name '*.c' 2>/dev/null); \
+	if [ -n "$$SRC_FILES" ]; then \
+		$(CC) $(CFLAGS) $$SRC_FILES -o $(BUILD_DIR)/linux-hwe $(LDFLAGS); \
 		echo "Build completed successfully"; \
 	else \
 		echo "No source files found. Build infrastructure ready."; \
